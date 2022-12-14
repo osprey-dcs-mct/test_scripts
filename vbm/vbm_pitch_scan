@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+for pitch in $(seq 0 0.1 1)
+do
+	echo $(date +"%T.%N") "move to $pitch starting"
+	caput -c -w 60 MCTVBM01:PITCH.VAL "$pitch"
+	echo $(date +"%T.%N") "move to $pitch complete"
+	sleep 1
+done
+
